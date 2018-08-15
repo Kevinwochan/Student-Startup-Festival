@@ -1,0 +1,49 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+		<!-- meta -->
+			<title>Finhack</title>
+			<meta property="og:title" content="Finhack"/>
+			<meta property="og:type" content="website"/>
+			<meta property="og:url" content="https://finhack.textbook.ventures/"/>
+			<meta property="og:site_name" content="Textbook Venture's Finhack"/>
+			<meta property="og:description" content="Hack the FinTech Future"/>
+			<meta property="og:image" content="{% static 'img/textbook-ventures-icon.png' %}"/>
+			<link  rel="shortcut icon" href="{% static 'img/textbook-ventures-icon.png' %}"/>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Icons-->
+			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">  
+		<!-- Google Fonts-->
+			<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+			<link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
+			<link href="https://fonts.googleapis.com/css?family=Ubuntu:700" rel="stylesheet">
+		<!-- Bootstrap core CSS -->
+			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+		<!-- FontAwesome -->
+			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+		<!-- Custom styles for this template -->
+			<link rel="stylesheet" href="{% static 'css/base.css' %}">
+		<!-- Facebook Pixel Code -->
+		<!-- End Facebook Pixel Code -->
+</head>
+<body class="text-center" data-spy="scroll" data-target="#nav-menu">
+	<header class="masthead mb-auto">
+	{% block menu %}{% endblock menu %}
+	</header>
+	<main>
+	{% block content %}{% endblock content %}
+	</main>
+	<footer class="mastfoot py-2 mt-auto ">
+		<div class="inner">
+			© 2018 Textbook Ventures Inc. Trademarks and brands are the property of their respective owners.
+			</div>
+	</footer>
+	<!-- JQuery -->
+		<script  src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<!-- Bootstrap JS + Popper JS-->
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js" integrity="sha384-u/bQvRA/1bobcXlcEYpsEdFVK/vJs3+T+nXLsBYJthmdBuavHvAW6UsmqO2Gd/F9" crossorigin="anonymous"></script>
+		<script src="{% static '/js/smoothscroll.js' %}"></script>
+</body>
+</html>
