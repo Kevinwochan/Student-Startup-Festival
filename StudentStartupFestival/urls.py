@@ -19,5 +19,8 @@ from home.views import *
 
 urlpatterns = [
     path('',homepage),
+    path('startup-cup/',startupcup, name="startupcup"),
+    path('festival/',festival, name="festival"),
+    path('sponsors/',sponsors, name="sponsors"),
     path('admin/', admin.site.urls),
 ]

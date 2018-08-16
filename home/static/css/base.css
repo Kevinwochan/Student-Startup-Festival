@@ -27,12 +27,12 @@ h1 {
 }
 ::-moz-selection { /* Code for Firefox */
   color: white;
-  background: #ff5587;
+  background: #35a3db;
 }
 
 ::selection {
   color: white;
-  background: #ff5587;
+  background: #35a3db;
 }
 a {
   color: #444;
@@ -99,6 +99,7 @@ main {
 }
 .nav-masthead .nav-link:hover,
 .nav-masthead .nav-link:focus {
+  color: white;
   border-bottom-color: rgba(255, 255, 255, .25);
 }
 .nav-masthead .nav-link + .nav-link {
@@ -154,8 +155,8 @@ main {
 }
 #inner-cover {
   background-size:cover;
-  min-height:95vh;
-  padding: 5rem 1.5rem 1rem 1.5rem;
+  min-height:100vh;
+  padding: 10rem 1.5rem 1rem 1.5rem;
   position: relative;
 }
 .register-button{
@@ -327,6 +328,9 @@ td {
 /*
  * components
  */
+input {
+  border-radius: 2rem !important;
+}
 .button {
   border-radius: 2rem;
   background-color: #ff5587;
@@ -339,6 +343,10 @@ td {
  color:white;
 }
 
+.no-space-section{
+  max-width: 100%;
+  padding: 0;
+}
 .dark-blue-bg{
   background-color: #00001e;
   color: white;

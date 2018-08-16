@@ -1,0 +1,20 @@
+{% load static %}
+{% block menu %}
+<div class="inner">
+    <nav id="nav-menu" class="navbar nav-masthead fixed-top navbar-expand-md">
+        <div class="container">
+            <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarToggler">
+		<a class="nav-link" href="{% url 'festival' %}">THE FESTIVAL</a>
+		<a class="nav-link" href="{% url 'startupcup' %}">STARTUP CUP</a>
+			<a class="masthead-brand navbar-brand" href="https://textbook.ventures">
+			<img id="nav-img"class ="img-responsive" src="{% static 'img/ssflogo.png' %}" alt="Textbook Ventures">
+		</a>
+		<a class="nav-link" href="{% url 'sponsors' %}">SPONSORS</a>
+		<a class="button" href="{% url 'startupcup' %}">GET UPDATES</a>
+            </div>
+      </nav>
+</div>
+{% endblock %}
