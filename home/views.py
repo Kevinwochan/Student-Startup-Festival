@@ -11,3 +11,6 @@ def sponsors (request):
 
 def festival (request):
         return render(request,'festival.html')
+
+def application (request):
+        return render(request,'application.html')
