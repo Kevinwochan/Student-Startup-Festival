@@ -1,14 +1,13 @@
 /*
  * Globals
  */
-/* Links */
-/* Sample color palette */
+/* Color palette */
 :root {
   --yellow: #fecf33;
   --light-orange: #fdbd39;
   --peach: #ee6723;
 }
-/* Sample text styles */
+/* Text styles */
 header {
   font-family: system-ui;
   font-size: 24px;
@@ -22,8 +21,11 @@ header {
 p {
     font-family: "Roboto", sans-serif;
 }
-h1 {
-    font-family: "Roboto-Bold", sans-serif;
+h1, h2, h3 {
+   font-family: "Roboto-Black", sans-serif;
+}
+h4,h5,h6 {
+   font-family: "Roboto-Black", sans-serif;
 }
 ::-moz-selection { /* Code for Firefox */
   color: white;
@@ -46,6 +48,9 @@ a:hover {
   transition: color 200ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
   text-decoration: none;
 }
+/*
+ * Progress Bar
+ */
 .progress {
   background: #fff;
 }
@@ -76,6 +81,7 @@ body {
   position: relative;
 }
 main {
+  margin-top: 56px;
   background: white;
 }
 /*
@@ -84,7 +90,7 @@ main {
 .masthead {
 }
 .navbar {
-  background-color: rgba(51, 51, 51, 0.3);
+  background-color: #00001e;
 }
 .masthead-brand img{
   margin-bottom: 0;
@@ -226,7 +232,6 @@ main {
  * sections
  */
 section {
-  max-width: 60em;
   padding: 14rem;
   padding: 5rem 0 5rem 0;
   margin: auto;
@@ -335,7 +340,6 @@ td {
 .timeline {
   position: relative;
   max-width: 1200px;
-  margin: 0 auto;
 }
 
 /* The actual timeline (the vertical ruler) */
