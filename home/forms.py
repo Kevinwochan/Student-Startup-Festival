@@ -6,13 +6,44 @@ for r in UNIVERSITY_LIST:
             UNIVERSITY_CHOICES.append((r,r))
 
 class applicationForm(forms.Form):
-    name = forms.CharField(max_length=100)
-    email = forms.EmailField()
-    university = forms.ChoiceField(choices=UNIVERSITY_CHOICES);
-    pdf = forms.FileField()
-    comments = forms.CharField(widget=forms.Textarea)
+    name = forms.CharField(
+			max_length=100,
+			label="Name",
+			widget = forms.TextInput(attrs={'class':"form-control",
+						'placeholder':"select one"
+			}),
+			required=True
+	)
 
+    email = forms.EmailField(
+			max_length=100,
+			label="Email",
+			widget = forms.EmailInput(attrs={'class':"form-control",
+						'placeholder':"select one"
+			}),
+			required=True
 
+	)
+    university = forms.ChoiceField(
+			choices=UNIVERSITY_CHOICES,
+			label = "University",
+			widget = forms.Select(attrs={'class':"form-control",
+						'placeholder':"select one"
+			}),
+			required=True
+	)
+    pdf = forms.FileField(
+			label="One-Page Summary",
+			widget = forms.FileInput(attrs={'class':"form-control",
+						'placeholder':"pdf format only"
+			}),
+			required=True
+	)
+    comments = forms.CharField(
+			label="Additional comments",
+			widget = forms.Textarea(attrs={'class':"form-control"}),
+			required=True
+	)
 
 #	<form id="startupcup-application" enctype="multipart/form-data"action="{% url 'application' %}" method="post">
 #		<div class="form-group">

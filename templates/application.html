@@ -21,13 +21,15 @@
 	</ul>
 	<p><strong>APPLICATIONS CLOSE SEPTEMBER 18TH 11.59PM.</strong></p>
 </section>
+
 <section id="aplication-form" class="text-left">
 	<div class="container">
+		<div class="row mx">
 		<h1>Submit Your Application</h1>
-		<form id="startupcup-application" enctype="multipart/form-data"action="{% url 'application' %}" method="post">
+		<form id="startupcup-application" enctype="multipart/form-data" action="{% url 'application' %}" method="post">
 			{% csrf_token %}
-			{{ application }}
-			<button type="submit" class="btn btn-primary">Submit</button>
+			{{ application.as_table }}
+			<button type="submit" class="button btn primary my-2">Submit</button>
 		</form>
 	</div>
 <section>

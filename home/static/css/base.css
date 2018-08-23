@@ -491,7 +491,10 @@ td {
 /*
  * components
  */
-input {
+label {
+  padding: .375rem .75rem !important;
+}
+input, select {
   border-radius: 2rem !important;
 }
 .button {

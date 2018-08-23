@@ -17,7 +17,7 @@ def festival (request):
 
 def application (request):
     if request.method == 'POST':
-        application = applicationForm(request.POST)
+        application = applicationForm(request.POST, requrest.FILES)
         if application.is_valid():
             name = form.cleaned_data['email']
             email_address = form.cleaned_data['email']
