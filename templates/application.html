@@ -24,11 +24,14 @@
 
 <section id="aplication-form" class="text-left">
 	<div class="container">
-		<div class="row mx">
 		<h1>Submit Your Application</h1>
 		<form id="startupcup-application" enctype="multipart/form-data" action="{% url 'application' %}" method="post">
 			{% csrf_token %}
-			{{ application.as_table }}
+			<div class="row mx">
+				<div class="col-md">
+					{{ application}}
+				</div>
+			</div>
 			<button type="submit" class="button btn primary my-2">Submit</button>
 		</form>
 	</div>

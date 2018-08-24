@@ -10,7 +10,7 @@ class applicationForm(forms.Form):
 			max_length=100,
 			label="Name",
 			widget = forms.TextInput(attrs={'class':"form-control",
-						'placeholder':"select one"
+						'placeholder':"John Smith"
 			}),
 			required=True
 	)
@@ -19,7 +19,7 @@ class applicationForm(forms.Form):
 			max_length=100,
 			label="Email",
 			widget = forms.EmailInput(attrs={'class':"form-control",
-						'placeholder':"select one"
+						'placeholder':"example@email.com"
 			}),
 			required=True
 
@@ -42,7 +42,7 @@ class applicationForm(forms.Form):
     comments = forms.CharField(
 			label="Additional comments",
 			widget = forms.Textarea(attrs={'class':"form-control"}),
-			required=True
+			required=False
 	)
 
 #	<form id="startupcup-application" enctype="multipart/form-data"action="{% url 'application' %}" method="post">

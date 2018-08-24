@@ -1,7 +1,9 @@
+from .gmail import *
 from django.core.mail import EmailMessage
 from django import forms
 from django.shortcuts import render
 from .forms import applicationForm
+from django.core.files.uploadedfile import SimpleUploadedFile
 
 def homepage (request):
         return render(request,'landing.html')
@@ -17,19 +19,36 @@ def festival (request):
 
 def application (request):
     if request.method == 'POST':
-        application = applicationForm(request.POST, requrest.FILES)
+        application = applicationForm(request.POST, request.FILES)
         if application.is_valid():
-            name = form.cleaned_data['email']
-            email_address = form.cleaned_data['email']
-            message = name + "\n" + email + "\n" + form.cleaned_data['comments']
-            recipients = ('operations@textbook.ventures',
-                        'kevinwochan@gmail.com',
+            name = application.cleaned_data['name']
+            email_address = application.cleaned_data['email']
+            pdf = application.cleaned_data['pdf']
+            message = name + "\n" + email_address + "\n" + application.cleaned_data['comments']
+            recipients = ('Operations@textbook.ventures',
+                        'Kevinwochan@gmail.com',
                         'Clinton@textbook.ventures')
-            email = EmailMessage('SSF Application: '+name, message,
-                                'operations@textbook.ventures',
-                                recipients,
-                                )
-            email.attach_file(pdf)
+            '''
+            email = CreateMessageWithAttachment(
+                                 'Operations@textbook.ventures',
+                                 recipients,
+                                 'SSF Application: '+ name, 
+                                 message,
+                                 pdf.file.getvalue(),
+                                 pdf.name
+            )
+            email.send()
+            '''
+            email = EmailMessage(
+                                 'SSF Application: '+ name, 
+                                 message,
+                                 'Operations@textbook.ventures',
+                                 recipients
+            )
+            email.attach (pdf.name,
+                          pdf.file.getvalue(),
+                          mimetypes.guess_type(pdf.name)[0]
+            )
             email.send(fail_silently=False)
             return render(request,'application.html', {'application':application})
         else:
@@ -38,3 +57,5 @@ def application (request):
     else:
         application = applicationForm()
         return render(request,'application.html', {'application':application})
+
+
