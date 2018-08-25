@@ -43,8 +43,9 @@ def create_message(sender, to, subject, message_text):
   message['to'] = to
   message['from'] = sender
   message['subject'] = subject
-  return {'raw': base64.urlsafe_b64encode(message.as_string().encode('utf-8'))}
-
+  b64_bytes = base64.urlsafe_b64encode(message.as_bytes())
+  b64_string = b64_bytes.decode()
+  return {'raw': b64_string}
 
 
 
@@ -62,6 +63,7 @@ def create_message_with_attachment(
   Returns:
     An object containing a base64url encoded email object.
   """
+  # deal with the message body
   message = MIMEMultipart()
   message['to'] = to
   message['from'] = sender
@@ -70,20 +72,21 @@ def create_message_with_attachment(
   msg = MIMEText(message_text)
   message.attach(msg)
 
-  content_type, encoding = mimetypes.guess_type(file.name)
-
+  # deal with the attachment/files
+  filename = file.name
+  content_type = file.content_type
+  encoding = file.charset
   if content_type is None or encoding is not None:
     content_type = 'application/octet-stream'
   main_type, sub_type = content_type.split('/', 1)
-
   msg = MIMEBase(main_type, sub_type)
-  msg.set_payload(file.file.getvalue())
-  
-  filename = file.name
+  msg.set_payload(file.read())
+
   msg.add_header('Content-Disposition', 'attachment', filename=filename)
   message.attach(msg)
-
-  return {'raw': base64.urlsafe_b64encode(message.as_string().encode('utf-8'))}
+  b64_bytes = base64.urlsafe_b64encode(message.as_bytes())
+  b64_string = b64_bytes.decode()
+  return {'raw': b64_string}
 
 
 
