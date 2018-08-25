@@ -32,13 +32,20 @@ class applicationForm(forms.Form):
 			}),
 			required=True
 	)
-    pdf = forms.FileField(
+    summary = forms.FileField(
 			label="One-Page Summary",
 			widget = forms.FileInput(attrs={'class':"form-control",
 						'placeholder':"pdf format only"
 			}),
 			required=True
 	)
+    pitch_deck = forms.FileField(
+			label="Pitch Deck",
+			widget = forms.FileInput(attrs={'class':"form-control",
+						'placeholder':"pdf format only"
+			}),
+			required=True
+	)    
     comments = forms.CharField(
 			label="Additional comments",
 			widget = forms.Textarea(attrs={'class':"form-control"}),

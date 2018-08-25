@@ -15,7 +15,8 @@ from django.conf import settings
 def initialise_gmail():
     SCOPES = 'https://www.googleapis.com/auth/gmail.compose'
 
-    store = file.Storage('token.json')
+    store_path = os.path.join(settings.BASE_DIR,'token.json')
+    store = file.Storage(store_path)
     creds = store.get()
     if not creds or creds.invalid:
         cred_path = os.path.join(settings.BASE_DIR,'credentials.json')
@@ -27,7 +28,7 @@ def initialise_gmail():
 
 
 
-def create_message(sender, to, subject, message_text):
+def create_message(to, subject, message_text):
   """Create a message for an email.
 
   Args:
@@ -41,16 +42,15 @@ def create_message(sender, to, subject, message_text):
   """
   message = MIMEText(message_text)
   message['to'] = to
-  message['from'] = sender
+  message['from'] = 'operations@textbook.ventures'
   message['subject'] = subject
   b64_bytes = base64.urlsafe_b64encode(message.as_bytes())
   b64_string = b64_bytes.decode()
   return {'raw': b64_string}
 
 
-
 def create_message_with_attachment(
-    sender, to, subject, message_text, file):
+    recipients, subject, message_text, files):
   """Create a message for an email.
 
   Args:
@@ -65,32 +65,35 @@ def create_message_with_attachment(
   """
   # deal with the message body
   message = MIMEMultipart()
-  message['to'] = to
-  message['from'] = sender
+  message['to'] = ','.join(recipients)
+  message['from'] = 'operations@textbook.ventures'
   message['subject'] = subject
 
   msg = MIMEText(message_text)
   message.attach(msg)
 
   # deal with the attachment/files
-  filename = file.name
-  content_type = file.content_type
-  encoding = file.charset
-  if content_type is None or encoding is not None:
-    content_type = 'application/octet-stream'
-  main_type, sub_type = content_type.split('/', 1)
-  msg = MIMEBase(main_type, sub_type)
-  msg.set_payload(file.read())
+  for file in files:
+    filename = file.name
+    content_type = file.content_type
+    encoding = file.charset
+    if content_type is None or encoding is not None:
+      content_type = 'application/octet-stream'
+    main_type, sub_type = content_type.split('/', 1)
+    msg = MIMEBase(main_type, sub_type)
+    msg.set_payload(file.read())
 
-  msg.add_header('Content-Disposition', 'attachment', filename=filename)
-  message.attach(msg)
+    msg.add_header('Content-Disposition', 'attachment', filename=filename)
+    message.attach(msg)
+
   b64_bytes = base64.urlsafe_b64encode(message.as_bytes())
   b64_string = b64_bytes.decode()
   return {'raw': b64_string}
 
 
 
-def send_message(service, message):
+
+def send_message(message):
   """Send an email message.
 
   Args:
@@ -102,6 +105,7 @@ def send_message(service, message):
   Returns:
     Sent Message.
   """
+  service = initialise_gmail()
   try:
     message = (service.users().messages().send(userId='me', body=message)
                .execute())
@@ -110,3 +114,34 @@ def send_message(service, message):
   except HTTPError as e:
     print( 'An error occurred: %s' % e)
     print( e.read() )
+  return
+
+def send_confirmation_email(recipient):
+  service = initialise_gmail() 
+
+
+  confirmation_message_path = os.path.join(settings.BASE_DIR,'templates/confirmation_email.html')
+  try: 
+    fp = open (confirmation_message_path, 'rb')
+    message = MIMEText(fp.read(),'html')
+    fp.close()
+  except:
+    message = MIMEText('Thank you for your submission')
+
+  message['to'] = recipient
+  message['from'] = 'operations@textbook.ventures'
+  message['subject'] = 'SSF Cup Submission Confirmation'
+
+  b64_bytes = base64.urlsafe_b64encode(message.as_bytes())
+  b64_string = b64_bytes.decode()
+  send_message ({'raw':b64_string})
+
+  return 
+
+
+
+
+
+
+
+

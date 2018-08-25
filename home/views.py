@@ -17,25 +17,34 @@ def festival (request):
         return render(request,'festival.html')
 
 def application (request):
+
     if request.method == 'POST':
         application = applicationForm(request.POST, request.FILES)
+
         if application.is_valid():
             name = application.cleaned_data['name']
             email_address = application.cleaned_data['email']
-            pdf = application.cleaned_data['pdf']
-            message = name + "\n" + email_address + "\n" + application.cleaned_data['comments']
-            recipients = 'Operations@textbook.ventures'
-            recipients += ',Kevinwochan@gmail.com'
-            recipients += ',Clinton@textbook.ventures'
+            summary = application.cleaned_data['summary']
+            pitch_deck = application.cleaned_data['pitch_deck']
+
+            message = "Name: " + name + "\n" 
+            message += "Email Address: " + email_address + "\n" 
+            message += "Additional Comments\n" + application.cleaned_data['comments']
+
+            recipients = ['Operations@textbook.ventures',
+                           'Kevinwochan@gmail.com'
+            ]
+
+            attachments = [summary,pitch_deck]
+
             email = create_message_with_attachment(
-                                 'Operations@textbook.ventures',
                                  recipients,
                                  'SSF Application: '+ name, 
                                  message,
-                                 pdf
+                                 attachments
             )
             service = initialise_gmail() 
-            send_message (service, email)
+            send_message (email)
             '''
             subject = 'SSF Application: '+ name, 
             email = EmailMessage(
@@ -50,7 +59,8 @@ def application (request):
             )
             email.send(fail_silently=False)
             '''
-            return render(request,'application.html', {'application':application})
+            send_confirmation_email(email_address)
+            return render(request, 'success.html')
         else:
             return render(request,'application.html', {'application':application})
 

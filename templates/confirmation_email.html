@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+   
+{% block content %}
+{% load static %}
+	<main id="content" class="" role="main">
+		<section id="register">
+			<div id="inner-cover" class="mx-auto w-100 text-left" style="background-image: url('{% static 'img/pitchnight-13.jpg' %}');">
+				<div id="cover-text">
+					<h1 class="cover-heading">Student Startup Festival is Coming<br>Soon to <font class="secondary-accent">Sydney</font> in <font class="primary-accent">Oct 2018</font></h1>
+					<p class="lead font-weight-bold">Get PUMPED for a showcase night of Sydney’s best student startups, keynote speakers and more! Register now to get updates on ticket registration, competitions and event information.</p>
+					<a class="button cover-button">GET UPDATES</a>
+				</div>
+				<div class="">
+					<img class="logo d-inline" style="position:absolute; top:25%; right:15%; max-width:315px" src="{% static 'img/fancylogo@3x.png' %}">
+				</div>
+				<div class="cover-sponsors text-center">
+					<p class="lead text-uppercase font-weight-bold">SUPPORTED BY</p>
+					<img class="logo d-inline" src="{% static 'img/textbook-ventures.png' %}">
+					<img class="logo d-inline p-3" src="{% static 'img/techsydney.png' %}">
+				</div>
+			</div>
+	</section>
+	<section id="pitch" class="text-center">
+			<div class="container">
+				<i style="color:#35a3db" class="far fa-lightbulb fa-3x my-2"></i>
+			  	<h1>Pitch Your Startup For the </h1>
+				<h1 class="primary-accent">Ultimate Sydney Startup Experience</h1>
+				<p class="font-weight-bold">If you are a student that current has a startup, then WE WANT YOU! With an amazing prize provided by our gracious partners, we are awarding the top student-founded startup the ultimate startup experience. Interested? Click below to find out more.</p>
+				<a class="button">MORE INFO</a>
+			</div>
+		</section>
+		<section id="about-us" class="dark-blue-bg">
+			<div class="container">
+				<div class="row text-left">
+					<div class="col-md"; style="border-right: 17px solid #35a3db">
+						<h1>Sydney’s first student-led festival celebrating student entrepreneurship across all universities in  New South Wales.</h1>
+					</div>
+					<div class="col-md">
+						<p>Student Startup Festival was created to empower students of today to be catalysts of change tomorrow. We believe that every student should have some sort of encounter with entrepreneurship while they are in the education system, either as a founder, an employee or an enthusiast.
+						With this in mind, we are launching Sydney’s first student-led, student-focused festival to celebrate student entrepreneurship across NSW. For one night only, students, industry members, university staff and founders will come together to witness and celebrate the state of student entrepreneurship.</p>
+						<a href="https://textbook.ventures/" class="btn btn-outline-primary button" role="button" target="_blank">ABOUT US </a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="subscribe">
+			<div class="container">
+				<h1>Subscribe For Updates</h1>
+				<p>Sign up to get updated on venue, date and ticket information for the festival.</p>
+				<p>Details to be confirmed - stay tuned!</p>
+				<div class="input-group mb-3">
+				  <input type="text" class="form-control mr-3" placeholder=" Your email" aria-label="Your email" aria-describedby="basic-addon2">
+					<button class="btn btn-outline-secondary button" type="button">Subscribe</button>
+				</div> 
+			</div>
+        </section>
+
+{% endblock %}
