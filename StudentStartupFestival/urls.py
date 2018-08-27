@@ -18,10 +18,9 @@ from django.urls import path
 from home.views import *
 
 urlpatterns = [
-    path('',homepage),
+    path('',homepage,name="homepage"),
     path('startup-cup/',startupcup, name="startupcup"),
-    path('festival/',festival, name="festival"),
-    path('sponsors/',sponsors, name="sponsors"),
+    path('sponsors/',homepage, name="sponsors"),
     path('application/',application, name="application"),
     path('admin/', admin.site.urls),
 ]

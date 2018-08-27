@@ -34,14 +34,14 @@ class applicationForm(forms.Form):
 	)
     summary = forms.FileField(
 			label="One-Page Summary",
-			widget = forms.FileInput(attrs={'class':"form-control",
+			widget = forms.FileInput(attrs={'class':"form-control-file",
 						'placeholder':"pdf format only"
 			}),
 			required=True
 	)
     pitch_deck = forms.FileField(
 			label="Pitch Deck",
-			widget = forms.FileInput(attrs={'class':"form-control",
+			widget = forms.FileInput(attrs={'class':"form-control-file",
 						'placeholder':"pdf format only"
 			}),
 			required=True

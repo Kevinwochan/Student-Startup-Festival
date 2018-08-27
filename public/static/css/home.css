@@ -1,0 +1,133 @@
+/*
+ * Globals
+ */
+/* Color palette */
+:root {
+  --yellow: #fecf33;
+  --light-orange: #fdbd39;
+  --peach: #ee6723;
+}
+/* Text styles */
+header {
+  font-size: 24px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #554d56;
+}
+p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+h1, h2, h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+h4,h5,h6 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+::-moz-selection { /* Code for Firefox */
+  color: white;
+  background: #35a3db;
+}
+
+::selection {
+  color: white;
+  background: #35a3db;
+}
+a {
+  color: #444;
+}
+b,strong {
+  font-size: 1.15rem;
+}
+a:focus,
+a:hover {
+  color: #35a3db;
+  transition: color 200ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  text-decoration: none;
+}
+/*
+ * Progress Bar
+ */
+.progress {
+  background: #fff;
+}
+.progress-bar {
+  background: #35a3db;
+}
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #fff;
+  border: .05rem solid #fff;
+}
+/*
+ * Base structure
+ */
+html,
+body {
+  height: 100%;
+  background: #00001e;
+}
+body {
+  display: -ms-flexbox;
+  color: #444;
+  line-height: 2rem;
+  position: relative;
+}
+main {
+  background: white;
+}
+/*
+ * Header
+ */
+.masthead {
+}
+.navbar {
+  background-color: #00001e;
+}
+.navbar.transparent{
+  background-color: #00000000;
+}
+.masthead-brand img{
+  margin-bottom: 0;
+  max-height: 60px;
+}
+.nav-masthead .nav-link {
+  padding: .25rem 0;
+  font-weight: 700;
+  color: rgba(255, 255, 255, .5);
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
+}
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  color: white;
+  border-bottom-color: rgba(255, 255, 255, .25);
+}
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+.nav-masthead .active {
+  color: #fff;
+  border-bottom-color: #35a3db;
+}
+.nav-masthead .active:hover {
+  color: #fff;
+  border-bottom-color: #35a3db;
+}
+@media (min-width: 48em) {
+  .masthead-brand {
+    float: left;
+  }
+  .nav-masthead {
+    float: right;
+  }
+}

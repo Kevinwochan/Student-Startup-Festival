@@ -5,19 +5,15 @@ from .forms import applicationForm
 from .gmail import *
 
 def homepage (request):
-        return render(request,'landing.html')
+        return render(request,'landing.html', {'page':'homepage'})
 
 def startupcup (request):
-        return render(request,'startupcup.html')
+    return render(request, 'startupcup.html', {'page':'startupcup'})
 
 def sponsors (request):
-        return render(request,'sponsors.html')
-
-def festival (request):
-        return render(request,'festival.html')
+    return render(request, 'sponsors.html', {'page':'sponsors'})
 
 def application (request):
-
     if request.method == 'POST':
         application = applicationForm(request.POST, request.FILES)
 
@@ -62,10 +58,12 @@ def application (request):
             send_confirmation_email(email_address)
             return render(request, 'success.html')
         else:
-            return render(request,'application.html', {'application':application})
+            return render(request,'application.html', 
+                    {'page':'application', 'application':application})
 
     else:
         application = applicationForm()
-        return render(request,'application.html', {'application':application})
+        return render(request,'application.html', 
+                {'page':'applicaton', 'application':application})
 
 
