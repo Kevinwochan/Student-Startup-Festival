@@ -22,6 +22,9 @@ section {
   padding: 10rem 1.5rem 1rem 1.5rem;
   position: relative;
 }
+#cover-image{
+  display: none;
+}
 #cover-text {
   text-shadow: none;
   max-width: 65%;
@@ -57,7 +60,15 @@ section {
   padding: .75rem 1.25rem;
   font-weight: 700;
 }
-
+/*
+ * About Us
+ */
+#about-us .right-bordered-col{
+    border-right: 0px;
+    border-bottom: 17px solid #35a3db;
+    padding: 20px;
+    margin-bottom: 30px;
+}
 /*
  *  sponsors
  */
@@ -293,4 +304,23 @@ td {
     left: 0%;
   }
 }
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) {  }
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {  }
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { 
+  #cover-image{
+    display: inline;
+  }
+  #about-us .right-bordered-col{
+    border-right: 17px solid #35a3db;
+    border-bottom: 0px;
+    margin-bottom: 0;
+    padding: 0;
+  }
+}
+
 
