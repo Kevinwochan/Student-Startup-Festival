@@ -150,7 +150,7 @@ input, select {
 input[type=file]{
   border: 0rem !important;
 }
-.button {
+.button,#mc_embed_signup .button{
   border-radius: 2rem;
   border-color: #ff5587;
   background-color: #ff5587;
@@ -158,8 +158,9 @@ input[type=file]{
   padding: 0.4rem 0.9rem;
   margin: 0 0.1rem;
   font-weight: bold;
+  line-height: normal;
 }
-.button:hover{
+.button:hover, #mc_embed_signup .button:hover{
  color:white;
 }
 

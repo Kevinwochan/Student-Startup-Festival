@@ -6,13 +6,6 @@ section {
   padding: 5rem 0 5rem 0;
   margin: auto;
 }
-
-#venue,#criteria, #challenge, #startups, #register, #map{
-  max-width:100%;
-}
-#register, #startups{
-  padding: 0;
-}
 /*
  * Cover
  */
@@ -43,23 +36,20 @@ section {
   font-size: 1.5rem;
   font-weight: bold;
 }
-.cover-sponsors{
+.cover-footer{
+  max-height:150px;
   position: absolute;
-  padding: 2rem 0rem;
+  padding: 1rem 0rem;
   width: 100%;
   background: #00001e;
   color: white;
   left: 0;
   bottom:0;
 }
-.register-button{
-  margin-top: 5rem;
+.logo{
+  max-height:70px;
 }
 
-#register .btn-lg {
-  padding: .75rem 1.25rem;
-  font-weight: 700;
-}
 /*
  * About Us
  */
