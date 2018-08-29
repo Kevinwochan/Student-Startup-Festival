@@ -1,7 +1,8 @@
 from django.conf import settings
 from django import forms
 from django.shortcuts import render
-from .forms import applicationForm
+from .models import Application
+from .models import ApplicationForm
 from .gmail import *
 
 def homepage (request):
@@ -15,14 +16,15 @@ def sponsors (request):
 
 def application (request):
     if request.method == 'POST':
-        application = applicationForm(request.POST, request.FILES)
-
-        if application.is_valid():
-            name = application.cleaned_data['name']
-            email_address = application.cleaned_data['email']
-            summary = application.cleaned_data['summary']
-            pitch_deck = application.cleaned_data['pitch_deck']
-
+        applicationForm = ApplicationForm(request.POST, request.FILES)
+        if applicationForm.is_valid():
+            name = applicationForm.cleaned_data['name']
+            email_address = applicationForm.cleaned_data['email']
+            summary = applicationForm.cleaned_data['summary']
+            summary.name += email_address
+            pitch_deck = applicationForm.cleaned_data['pitch_deck']
+            pitch_deck.name += email_address
+            """
             message = "Name: " + name + "\n" 
             message += "Email Address: " + email_address + "\n" 
             message += "Additional Comments\n" + application.cleaned_data['comments']
@@ -39,31 +41,23 @@ def application (request):
                                  message,
                                  attachments
             )
-            service = initialise_gmail() 
-            send_message (email)
-            '''
-            subject = 'SSF Application: '+ name, 
-            email = EmailMessage(
-                                subject,
-                                message,
-                                settings.EMAIL_HOST_USER,
-                                recipients
-            )
-            email.attach (pdf.name,
-                          pdf.file.getvalue(),
-                          mimetypes.guess_type(pdf.name)[0]
-            )
-            email.send(fail_silently=False)
-            '''
             send_confirmation_email(email_address)
+            """
+            #application = Application(name,email_address,summary,pitch_deck)
+            applicationForm.save()
             return render(request, 'success.html')
         else:
             return render(request,'application.html', 
                     {'page':'application', 'application':application})
 
     else:
-        application = applicationForm()
+        application = ApplicationForm()
         return render(request,'application.html', 
                 {'page':'applicaton', 'application':application})
+
+def save_file(file):
+    with open('some/file/name.txt', 'wb+') as destination:
+        for chunk in f.chunks():
+            destination.write(chunk)
 
 

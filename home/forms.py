@@ -1,12 +1,15 @@
+from .models import Application
 from django import forms
 
 UNIVERSITY_LIST = ("UTS","UNSW","USYD","UWS","UOW", "UON","TAFE", "MQU")
 UNIVERSITY_CHOICES= []
 for r in UNIVERSITY_LIST:
-            UNIVERSITY_CHOICES.append((r,r))
+			UNIVERSITY_CHOICES.append((r,r))
 
-class applicationForm(forms.Form):
-    name = forms.CharField(
+class ApplicationForm(forms.Form):
+	class Meta:
+		model = Application
+	name = forms.CharField(
 			max_length=100,
 			label="Name",
 			widget = forms.TextInput(attrs={'class':"form-control",
@@ -15,7 +18,7 @@ class applicationForm(forms.Form):
 			required=True
 	)
 
-    email = forms.EmailField(
+	email = forms.EmailField(
 			max_length=100,
 			label="Email",
 			widget = forms.EmailInput(attrs={'class':"form-control",
@@ -24,7 +27,7 @@ class applicationForm(forms.Form):
 			required=True
 
 	)
-    university = forms.ChoiceField(
+	university = forms.ChoiceField(
 			choices=UNIVERSITY_CHOICES,
 			label = "University",
 			widget = forms.Select(attrs={'class':"form-control",
@@ -32,21 +35,21 @@ class applicationForm(forms.Form):
 			}),
 			required=True
 	)
-    summary = forms.FileField(
+	summary = forms.FileField(
 			label="One-Page Summary",
 			widget = forms.FileInput(attrs={'class':"form-control-file",
 						'placeholder':"pdf format only"
 			}),
 			required=True
 	)
-    pitch_deck = forms.FileField(
+	pitch_deck = forms.FileField(
 			label="Pitch Deck",
 			widget = forms.FileInput(attrs={'class':"form-control-file",
 						'placeholder':"pdf format only"
 			}),
 			required=True
-	)    
-    comments = forms.CharField(
+	)	
+	comments = forms.CharField(
 			label="Additional comments",
 			widget = forms.Textarea(attrs={'class':"form-control"}),
 			required=False
