@@ -21,6 +21,8 @@
 			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
 		<!-- FontAwesome -->
 			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+		<!-- MailChimp-->
+			<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
 		<!-- Custom styles for this template -->
 			<link rel="stylesheet" href="{% static 'css/base.css' %}">
 			<link rel="stylesheet" href="{% static 'css/home.css' %}">
@@ -33,28 +35,45 @@
 	</header>
 	<main>
 	{% block content %}{% endblock content %}
+	<section id="subscribe">
+		<div class="container">
+			<h1>Subscribe For Updates</h1>
+			<p>Sign up to get updated on venue, date and ticket information for the festival.</p>
+			<p>Details to be confirmed - stay tuned!</p>
+			<div class="input-group mb-3">
+				<style type="text/css">
+					#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+				</style>
+				<div id="mc_embed_signup">
+				<form action="https://ventures.us15.list-manage.com/subscribe/post?u=e8a76abd480a5c57333062c45&amp;id=2de0e3ca3e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+					<div id="mc_embed_signup_scroll">
+					
+					<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Your email" required>
+					<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_e8a76abd480a5c57333062c45_2de0e3ca3e" tabindex="-1" value=""></div>
+					<div class="clear"><input type="submit" value="SUBSCRIBE" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+					</div>
+				</form>
+				</div>
+			</div> 
+		</div>
+	</section>
 		<div id="contact" class="py-3">
 			<div class="container">
 				<p class="font-weight-bold my-0">Any Questions?</p>
 					<div class="row mx-0">
-						<div class="col-sm-3">
+						<div class="col-sm-4">
 							<a href="mailto:Clinton@Textbook.Ventures">
 								<i class="fa fa-envelope fa-2x mx-2"></i>Event Coordinator</a>
 							</a>
 						</div>
-						<div class="col-sm-3">
+						<div class="col-sm-4">
 							<a href="https://www.messenger.com/t/textbookventures">
 								<i class="fab fa-facebook-messenger fa-2x mx-2"></i>Facebook
 							</a>
 						</div>
-						<div class="col-sm-3">
+						<div class="col-sm-4">
 							<a href="https://twitter.com/tb_ventures">
 								<i class="fab fa-twitter fa-2x mx-2"></i>Twitter
-							</a>
-						</div>
-						<div class="col-sm-3">
-							<a href="http://finhack-2018.slack.com/">
-								<i class="fab fa-slack fa-2x mx-2"></i>Slack
 							</a>
 						</div>
 				</div>
