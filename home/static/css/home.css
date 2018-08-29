@@ -59,7 +59,7 @@ section {
  */
 #about-us .right-bordered-col{
     border-right: 0px;
-    border-bottom: 17px solid #35a3db;
+    border-bottom: 10px solid #35a3db;
     padding: 20px;
     margin-bottom: 30px;
 }
@@ -310,7 +310,7 @@ td {
     display: inline;
   }
   #about-us .right-bordered-col{
-    border-right: 17px solid #35a3db;
+    border-right: 10px solid #35a3db;
     border-bottom: 0px;
     margin-bottom: 0;
     padding: 0;

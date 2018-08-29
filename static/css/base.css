@@ -150,28 +150,27 @@ input, select {
 input[type=file]{
   border: 0rem !important;
 }
-.button,#mc_embed_signup .button{
-  border-radius: 2rem;
-  border-color: #ff5587;
-  background-color: #ff5587;
-  color: white!important;
-  padding: 0.4rem 0.9rem;
-  margin: 0 0.1rem;
-  font-weight: bold;
-  line-height: normal;
-}
-.button:hover, #mc_embed_signup .button:hover{
+.button-primary,
+.button, 
+#mc_embed_signup .button{
  color:white;
+ background-color: #ff5587;
+ padding: 0.4rem 0.9rem;
+ margin: 0 0.1rem;
+ font-weight: bold;
+ line-height: normal;
+ border-radius: 2rem;
+ border: 2px solid #ff5587;
 }
-
-/* Custom default button */
-.btn-secondary,
-.btn-secondary:hover,
-.btn-secondary:focus {
-  color: #333;
-  text-shadow: none; /* Prevent inheritance from `body` */
-  background-color: #fff;
-  border: .05rem solid #fff;
+.btn-primary:hover,
+.btn-outline-primary:hover,
+#mc_embed_signup .button:hover{
+ background-color: #00000000;
+ color: #ff5587;
+ border-color: #ff5587;
+}
+#mc_embed_signup .button{
+ line-height: 0;
 }
 
 
