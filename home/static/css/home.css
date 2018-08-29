@@ -9,6 +9,10 @@ section {
 /*
  * Cover
  */
+#cover{
+	padding: 0;
+	margin: 0;
+}
 #inner-cover {
   background-size:cover;
   min-height:100vh;
