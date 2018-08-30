@@ -2,11 +2,18 @@ from django.db import models
 from django.forms import ModelForm
 from django import forms
 
-# Create your models here.
-UNIVERSITY_LIST = ("UTS","UNSW","USYD","UWS","UOW", "UON","TAFE", "MQU")
-UNIVERSITY_CHOICES= []
-for r in UNIVERSITY_LIST:
-    UNIVERSITY_CHOICES.append((r,r))
+UNIVERSITY_CHOICES = [
+        ('UTS', 'University of Technolog Sydney'),
+        ('UNSW', 'University of New South Wales'), 
+        ('USYD', 'University of Sydney'),
+        ('MQU', 'University of Macquaarie'),
+        ('UOW', 'University of Wollongong'),
+        ('ACU', 'Australian Catholic University'),
+        ('UNE', 'University of New England'),
+        ('SCU', 'Southern Cross University'),
+        ('CSU', 'Charles Sturt University'),
+        ('TAFE','TAFE')
+]
 
 class Application(models.Model):
 
@@ -25,47 +32,46 @@ class Application(models.Model):
 class ApplicationForm(ModelForm):
     name = forms.CharField(
             max_length=100,
-            label="Name",
-            widget = forms.TextInput(attrs={'class':"form-control",
-                        'placeholder':"John Smith"
+            label='Name',
+            widget = forms.TextInput(attrs={'class':'form-control',
+                        'placeholder':'John Smith'
             }),
             required=True
     )
 
     email = forms.EmailField(
             max_length=100,
-            label="Email",
-            widget = forms.EmailInput(attrs={'class':"form-control",
-                        'placeholder':"example@email.com"
+            label='Email',
+            widget = forms.EmailInput(attrs={'class':'form-control',
+                        'placeholder':'example@email.com'
             }),
             required=True
 
-    )
-    university = forms.ChoiceField(
-            choices=UNIVERSITY_CHOICES,
-            label = "University",
-            widget = forms.Select(attrs={'class':"form-control",
-                        'placeholder':"select one"
+    ) 
+    university = forms.ChoiceField( choices=UNIVERSITY_CHOICES,
+            label = 'University',
+            widget = forms.Select(attrs={'class':'form-control',
+                        'placeholder':'select one'
             }),
             required=True
     )
     summary = forms.FileField(
-            label="One-Page Summary",
-            widget = forms.FileInput(attrs={'class':"form-control-file",
-                        'placeholder':"pdf format only"
+            label='One-Page Summary',
+            widget = forms.FileInput(attrs={'class':'form-control-file',
+                        'placeholder':'pdf format only'
             }),
             required=True
     )
     pitch_deck = forms.FileField(
-            label="Pitch Deck",
-            widget = forms.FileInput(attrs={'class':"form-control-file",
-                        'placeholder':"pdf format only"
+            label='Pitch Deck',
+            widget = forms.FileInput(attrs={'class':'form-control-file',
+                        'placeholder':'pdf format only'
             }),
             required=True
     )    
     comments = forms.CharField(
-            label="Additional comments",
-            widget = forms.Textarea(attrs={'class':"form-control"}),
+            label='Additional comments',
+            widget = forms.Textarea(attrs={'class':'form-control'}),
             required=False
     )
 
@@ -73,24 +79,24 @@ class ApplicationForm(ModelForm):
     class Meta:
         model = Application
         fields = ['name','email','university','summary','pitch_deck','comments']
-        """
+        '''
         widgets = {
-                'name': Textinput(attrs={'class':"form-control",
-                        'placeholder':"John Smith"
+                'name': Textinput(attrs={'class':'form-control',
+                        'placeholder':'John Smith'
                 }),
-                'email': EmailInput(attrs={'class':"form-control",
-                        'placeholder':"example@email.com"
+                'email': EmailInput(attrs={'class':'form-control',
+                        'placeholder':'example@email.com'
                 }),
-                'university' : Select(attrs={'class':"form-control",
-                        'placeholder':"select one"
+                'university' : Select(attrs={'class':'form-control',
+                        'placeholder':'select one'
                 }),
-                'summary': FileInput(attrs={'class':"form-control-file",
-                        'placeholder':"pdf format only"
+                'summary': FileInput(attrs={'class':'form-control-file',
+                        'placeholder':'pdf format only'
                 }),
-                'pitch_deck': FileInput(attrs={'class':"form-control-file",
-                            'placeholder':"pdf format only"
+                'pitch_deck': FileInput(attrs={'class':'form-control-file',
+                            'placeholder':'pdf format only'
                 }),
-                'comments' : Textarea(attrs={'class':"form-control"
+                'comments' : Textarea(attrs={'class':'form-control'
                 })
         }
-        """
+        '''
