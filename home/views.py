@@ -21,10 +21,24 @@ def application (request):
             name = applicationForm.cleaned_data['name']
             email_address = applicationForm.cleaned_data['email']
             summary = applicationForm.cleaned_data['summary']
-            summary.name += email_address
             pitch_deck = applicationForm.cleaned_data['pitch_deck']
-            pitch_deck.name += email_address
-            """
+            applicationForm.save()
+            return render(request, 'success.html')
+        else:
+            return render(request,'application.html', 
+                    {'page':'application', 'application':application})
+
+    else:
+        application = ApplicationForm()
+        return render(request,'application.html', 
+                {'page':'applicaton', 'application':application})
+
+def save_file(file):
+    with open('some/file/name.txt', 'wb+') as destination:
+        for chunk in f.chunks():
+            destination.write(chunk)
+
+"""
             message = "Name: " + name + "\n" 
             message += "Email Address: " + email_address + "\n" 
             message += "Additional Comments\n" + application.cleaned_data['comments']
@@ -42,22 +56,5 @@ def application (request):
                                  attachments
             )
             send_confirmation_email(email_address)
-            """
             #application = Application(name,email_address,summary,pitch_deck)
-            applicationForm.save()
-            return render(request, 'success.html')
-        else:
-            return render(request,'application.html', 
-                    {'page':'application', 'application':application})
-
-    else:
-        application = ApplicationForm()
-        return render(request,'application.html', 
-                {'page':'applicaton', 'application':application})
-
-def save_file(file):
-    with open('some/file/name.txt', 'wb+') as destination:
-        for chunk in f.chunks():
-            destination.write(chunk)
-
-
+"""
