@@ -177,7 +177,6 @@ td {
 
 /* text-box around content */
 .text-box {
-  padding: 10px 40px;
   position: relative;
   background-color: inherit;
   width: 50%;
@@ -192,7 +191,7 @@ td {
   right: -13px;
   background-color: white;
   border: 4px solid #35a3db;
-  top: 40px;
+  top: 60px;
   border-radius: 50%;
   z-index: 1;
 }
@@ -205,16 +204,16 @@ td {
 /* timeline date field */
 .timeline-date-left {
   position: absolute;
-  right: -130px;
-  top: 33px;
+  right: -120px;
+  top: 55px;
   z-index: 1;
 }
 
 .timeline-date-right{
   position: absolute;
-  top: 15px;
+  top: 55px;
   z-index: 1;
-  left: -23px;
+  left: -120px;
 }
 
 /* Place the text-box to the left */
@@ -228,36 +227,6 @@ td {
   left: 50%;
   text-align: left;
 }
-
-/* Add arrows to the left text-box (pointing right) */
-.timeline-left::before {
-  content: " ";
-  height: 0;
-  position: absolute;
-  top: 22px;
-  width: 0;
-  z-index: 1;
-  right: 30px;
-  border: medium solid white;
-  border-width: 10px 0 10px 10px;
-  border-color: transparent transparent transparent white;
-}
-
-/* Add arrows to the right text-box (pointing left) */
-.timeline-right::before {
-  content: " ";
-  height: 0;
-  position: absolute;
-  top: 40px;
-  width: 0;
-  z-index: 1;
-  left: 30px;
-  border: medium solid white;
-  border-width: 10px 10px 10px 0;
-  border-color: transparent white transparent transparent;
-}
-
-
 
 /* The actual content */
 .timeline-text{
@@ -280,22 +249,25 @@ td {
     padding-right: 25px;
   }
 
-/* Make sure that all arrows are pointing leftwards */
- .text-box::before {
-    left: 60px;
-    border: medium solid white;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent white transparent transparent;
-  }
-
 /* Make sure all circles are at the same spot */
   .timeline-left::after, .timeline-right::after {
-    left: 15px;
+    left: 18px;
+    top: 30px;
   }
 
 /* Make all right text-boxs behave like the left ones */
   .timeline-right{
     left: 0%;
+  }
+  .timeline-left{
+    text-align: left;
+  }
+  .timeline-date-right{
+
+  }
+  .timeline-date-left {
+    right: 330px;
+    top: -15px;
   }
 }
 /* Small devices (landscape phones, 576px and up)*/
