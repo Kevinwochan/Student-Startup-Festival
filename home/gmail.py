@@ -32,11 +32,7 @@ def initialise_gmail():
 def send_message(message):
   service = initialise_gmail()
   try:
-    b = BytesIO()
-    message_bytes = urlsafe_b64decode(fetched_message['raw'])
-    b.write(message_bytes)
-    media_body = googleapiclient.http.MediaIoBaseUpload(b, mimetype='message/rfc822')
-    message =(service.users().messages().insert(userId='me', media_body=media_body).execute())
+    message =(service.users().messages().insert(userId='me', body=message).execute())
     print( 'Message Id: %s' % message['id'])
     return message
   except HTTPError as e:
@@ -45,8 +41,8 @@ def send_message(message):
   return
 
 def create_message(to, subject, message_text):
-  message = MIME(message_text)
-  message['to'] = to
+  message = MIMEText(message_text)
+  message['to'] = ','.join(to)
   message['from'] = 'operations@textbook.ventures'
   message['subject'] = subject
   b64_bytes = base64.urlsafe_b64encode(message.as_bytes())

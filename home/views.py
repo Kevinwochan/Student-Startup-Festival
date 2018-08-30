@@ -21,8 +21,10 @@ def application (request):
             name = applicationForm.cleaned_data['name']
             email_address = applicationForm.cleaned_data['email']
             summary = applicationForm.cleaned_data['summary']
-            pitch_deck = applicationForm.cleaned_data['pitch_deck']
-            applicationForm.save()
+            slides = applicationForm.cleaned_data['slides']
+            
+            newApplication = applicationForm.save()
+            send_submission_email(newApplication)
             return render(request, 'success.html')
         else:
             return render(request,'application.html', 
@@ -33,28 +35,17 @@ def application (request):
         return render(request,'application.html', 
                 {'page':'applicaton', 'application':application})
 
-def save_file(file):
-    with open('some/file/name.txt', 'wb+') as destination:
-        for chunk in f.chunks():
-            destination.write(chunk)
+def send_submission_email(application):
 
-"""
-            message = "Name: " + name + "\n" 
-            message += "Email Address: " + email_address + "\n" 
-            message += "Additional Comments\n" + application.cleaned_data['comments']
-
-            recipients = ['Operations@textbook.ventures',
-                           'Kevinwochan@gmail.com'
-            ]
-
-            attachments = [summary,pitch_deck]
-
-            email = create_message_with_attachment(
-                                 recipients,
-                                 'SSF Application: '+ name, 
-                                 message,
-                                 attachments
-            )
-            send_confirmation_email(email_address)
-            #application = Application(name,email_address,summary,pitch_deck)
-"""
+        message = "Name: " + application.name + "\n" 
+        message += "Email Address: " + application.email + "\n" 
+        message += "Submmary: " + application.summary.url
+        message += "Slides: " + application.slides.url
+        message += "Additional Comments\n" + application.comments
+        recipients = ['Operations@textbook.ventures',
+                       'Kevinwochan@gmail.com'
+        ]
+        email = create_message(recipients, 'SSF Application: '+ application.name, message)
+        print(message)
+        send_message(email)
+        return

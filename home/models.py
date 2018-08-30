@@ -3,10 +3,10 @@ from django.forms import ModelForm
 from django import forms
 
 UNIVERSITY_CHOICES = [
-        ('UTS', 'University of Technolog Sydney'),
+        ('UTS', 'University of Technology Sydney'),
         ('UNSW', 'University of New South Wales'), 
         ('USYD', 'University of Sydney'),
-        ('MQU', 'University of Macquaarie'),
+        ('MQU', 'University of Macquarie'),
         ('UOW', 'University of Wollongong'),
         ('ACU', 'Australian Catholic University'),
         ('UNE', 'University of New England'),
@@ -25,7 +25,7 @@ class Application(models.Model):
 
     summary = models.FileField(default='', upload_to='applications/')
 
-    pitch_deck = models.FileField(default='', upload_to='applications/')
+    slides = models.FileField(default='', upload_to='applications/')
 
     comments = models.CharField(max_length=500, default='')
 
@@ -62,7 +62,7 @@ class ApplicationForm(ModelForm):
             }),
             required=True
     )
-    pitch_deck = forms.FileField(
+    slides = forms.FileField(
             label='Pitch Deck',
             widget = forms.FileInput(attrs={'class':'form-control-file',
                         'placeholder':'pdf format only'
@@ -74,29 +74,6 @@ class ApplicationForm(ModelForm):
             widget = forms.Textarea(attrs={'class':'form-control'}),
             required=False
     )
-
-
     class Meta:
         model = Application
-        fields = ['name','email','university','summary','pitch_deck','comments']
-        '''
-        widgets = {
-                'name': Textinput(attrs={'class':'form-control',
-                        'placeholder':'John Smith'
-                }),
-                'email': EmailInput(attrs={'class':'form-control',
-                        'placeholder':'example@email.com'
-                }),
-                'university' : Select(attrs={'class':'form-control',
-                        'placeholder':'select one'
-                }),
-                'summary': FileInput(attrs={'class':'form-control-file',
-                        'placeholder':'pdf format only'
-                }),
-                'pitch_deck': FileInput(attrs={'class':'form-control-file',
-                            'placeholder':'pdf format only'
-                }),
-                'comments' : Textarea(attrs={'class':'form-control'
-                })
-        }
-        '''
+        fields = ['name','email','university','summary','slides','comments']

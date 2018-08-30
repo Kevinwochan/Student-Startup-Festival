@@ -42,7 +42,7 @@ class ApplicationForm(forms.Form):
 			}),
 			required=True
 	)
-	pitch_deck = forms.FileField(
+	slides = forms.FileField(
 			label="Pitch Deck",
 			widget = forms.FileInput(attrs={'class':"form-control-file",
 						'placeholder':"pdf format only"
