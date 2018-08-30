@@ -23,16 +23,38 @@
 </section>
 
 <section id="aplication-form" class="text-left dark-blue-bg">
-	<div class="container">
+	<div class="container text-center">
 		<h1>Submit Your Application</h1>
 		<form id="startupcup-application" enctype="multipart/form-data" action="{% url 'application' %}" method="post">
 			{% csrf_token %}
 			<div class="row mx-0">
-				<div class="col-md-6">
-					{{application}}
+				<div class="col-md-6 text-left mx-auto">
+					{{ application.name.label_tag }}
+					{{ application.name.errors }}
+					{{ application.name }}
+
+					{{ application.email.label_tag }}
+					{{ application.email.errors }}
+					{{ application.email }}
+
+					{{ application.university.label_tag }}
+					{{ application.university.errors }}
+					{{ application.university }}
+
+					{{ application.summary.label_tag }}
+					{{ application.summary.errors }}
+					{{ application.summary }}
+
+					{{ application.pitch_deck.errors }}
+					{{ application.pitch_deck.label_tag }}
+					{{ application.pitch_deck }}
+
+					{{ application.comments.errors }}
+					{{ application.comments.label_tag }}
+					{{ application.comments }}
 				</div>
 			</div>
-			<button type="submit" class="button btn primary my-2">Submit</button>
+			<button type="submit" class="button btn-primary my-2">Submit</button>
 		</form>
 	</div>
 </section>
