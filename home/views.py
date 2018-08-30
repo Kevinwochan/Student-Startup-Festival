@@ -8,6 +8,10 @@ from .gmail import *
 def homepage (request):
         return render(request,'landing.html', {'page':'homepage'})
 
+def subscribed (request):
+        return render(request,'subscribed.html', {'page':'subscribed'})
+
+
 def startupcup (request):
     return render(request, 'startupcup.html', {'page':'startupcup'})
 
