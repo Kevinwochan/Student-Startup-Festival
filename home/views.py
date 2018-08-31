@@ -22,11 +22,6 @@ def application (request):
     if request.method == 'POST':
         applicationForm = ApplicationForm(request.POST, request.FILES)
         if applicationForm.is_valid():
-            name = applicationForm.cleaned_data['name']
-            email_address = applicationForm.cleaned_data['email']
-            summary = applicationForm.cleaned_data['summary']
-            slides = applicationForm.cleaned_data['slides']
-            
             newApplication = applicationForm.save()
             send_submission_email(newApplication)
             return render(request, 'success.html')
