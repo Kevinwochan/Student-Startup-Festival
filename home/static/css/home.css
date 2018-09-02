@@ -49,8 +49,9 @@ section {
   left: 0;
   bottom:0;
 }
-.logo{
+.event-partner{
   max-height:70px;
+  max-width: 100%
 }
 
 /*

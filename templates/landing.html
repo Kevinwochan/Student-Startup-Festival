@@ -14,16 +14,26 @@
 			<img id="cover-image" style="position:absolute; top:25%; left:70%; max-width:315px" src="{% static 'img/ssf.png' %}">
 		</div>
 		<div class="cover-footer text-center">
-			<p class="text-uppercase font-weight-bold my-0">EVENT PARTNERS</p>
-            <a href="https://http://www.cityofsydney.nsw.gov.au/">
-				<img class="logo d-inline" src="{% static 'img/city-of-sydney.png' %}">
-			</a>
-			<a href="https://textbook.ventures">
-				<img class="logo d-inline" src="{% static 'img/textbook-ventures.png' %}">
-			</a>
-			<a href="https://www.techsydney.com.au/">
-				<img class="logo d-inline p-3" src="{% static 'img/TechSydneyLogo.png' %}">
-			</a>
+			<div class="container-fluid">
+				<p class="text-uppercase font-weight-bold my-0">EVENT PARTNERS</p>
+				<div class="row">
+					<div class="col-4">
+						<a href="https://http://www.cityofsydney.nsw.gov.au/">
+							<img class="event-partner d-inline" src="{% static 'img/city-of-sydney.png' %}">
+						</a>
+					</div>
+					<div class="col-4">
+						<a href="https://textbook.ventures">
+							<img class="event-partner d-inline" src="{% static 'img/textbook-ventures.png' %}">
+						</a>
+					</div>
+					<div class="col-4">
+						<a href="https://www.techsydney.com.au/">
+							<img class="event-partner d-inline" src="{% static 'img/techsydney.png' %}">
+						</a>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>
@@ -40,10 +50,10 @@
 	<div class="container">
 		<div class="row text-left">
 			<div class="col-md right-bordered-col mx-2 p-3">
-                <h1>We are NSW’s first student-led festival celebrating student entrepreneurship across all tertiary education students in NSW</h1>
+				<h1>We are NSW’s first student-led festival celebrating student entrepreneurship across all tertiary education students in NSW</h1>
 			</div>
 			<div class="col-md mx-2 p-3">
-                <p class="my-0 mb-3">Being a student entrepreneur is hard! That’s why the Student Startup Festival was created, to empower and celebrate the student startup ecosystem’s unsung heroes, the campus hustlers, and the industry hackers!</p>
+				<p class="my-0 mb-3">Being a student entrepreneur is hard! That’s why the Student Startup Festival was created, to empower and celebrate the student startup ecosystem’s unsung heroes, the campus hustlers, and the industry hackers!</p>
 				<a href="https://textbook.ventures/" class="btn btn-outline-primary button" role="button" "_blank">ABOUT US </a>
 			</div>
 		</div>
