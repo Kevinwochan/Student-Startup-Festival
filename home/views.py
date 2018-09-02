@@ -35,7 +35,6 @@ def application (request):
                 {'page':'applicaton', 'application':application})
 
 def send_submission_email(application):
-
         message = "Name: " + application.name + "\n" 
         message += "Email Address: " + application.email + "\n" 
         message += "Submmary: " + application.summary.url

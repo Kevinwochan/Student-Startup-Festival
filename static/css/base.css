@@ -17,13 +17,15 @@
 }
 /* Text styles */
 html { font-size: 20px; }
-p {
-  font-family: "Roboto", sans-serif;
+p ,
+body
+{
+  font-family: 'Varela Round', sans-serif;
   font-weight: 400;
 }
 h1, h2, h3 {
   font-size: 2.4rem;
-  font-family: "Roboto", sans-serif;
+  font-family: "Baloo Tammudu", cursive;
   font-weight: 700;
 }
 h4,h5,h6 {

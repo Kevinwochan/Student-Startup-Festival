@@ -10,7 +10,7 @@ class Application(models.Model):
 
     institution = models.CharField( max_length=100, default='') 
 
-    identification = models.ImageField(default='', upload_to='applications/')
+    identification = models.FileField(default='', upload_to='applications/')
 
     summary = models.FileField(default='', upload_to='applications/')
 
@@ -45,7 +45,7 @@ class ApplicationForm(ModelForm):
             }),
             required=True
     )
-    identification = forms.ImageField(
+    identification = forms.FileField(
             label='Photo of valid student identification',
             widget = forms.ClearableFileInput(attrs={'class':'form-control-file',
                         'placeholder':''
