@@ -82,7 +82,8 @@ section {
  *  prizes
  */
 .prize-icon {
-  max-height: 8rem;
+  filter: brightness(0) invert(1);
+  max-height: 3rem;
   margin-bottom: 2rem;
 }
 
