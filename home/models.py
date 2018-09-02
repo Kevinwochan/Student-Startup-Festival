@@ -2,26 +2,15 @@ from django.db import models
 from django.forms import ModelForm
 from django import forms
 
-UNIVERSITY_CHOICES = [
-        ('UTS', 'University of Technology Sydney'),
-        ('UNSW', 'University of New South Wales'), 
-        ('USYD', 'University of Sydney'),
-        ('MQU', 'University of Macquarie'),
-        ('UOW', 'University of Wollongong'),
-        ('ACU', 'Australian Catholic University'),
-        ('UNE', 'University of New England'),
-        ('SCU', 'Southern Cross University'),
-        ('CSU', 'Charles Sturt University'),
-        ('TAFE','TAFE')
-]
-
 class Application(models.Model):
 
     name = models.CharField( max_length=100, default='') 
 
     email = models.EmailField( max_length=100, default='')
 
-    university = models.CharField( max_length=100, choices=UNIVERSITY_CHOICES,default='')
+    institution = models.CharField( max_length=100, default='') 
+
+    identification = models.ImageField(default='', upload_to='applications/')
 
     summary = models.FileField(default='', upload_to='applications/')
 
@@ -48,10 +37,18 @@ class ApplicationForm(ModelForm):
             required=True
 
     ) 
-    university = forms.ChoiceField( choices=UNIVERSITY_CHOICES,
-            label = 'University',
-            widget = forms.Select(attrs={'class':'form-control',
-                        'placeholder':'select one'
+    institution = forms.CharField(
+            max_length=100,
+            label='Tertiary Institution Name',
+            widget = forms.TextInput(attrs={'class':'form-control',
+                        'placeholder':''
+            }),
+            required=True
+    )
+    identification = forms.ImageField(
+            label='Photo of valid student identification',
+            widget = forms.FileInput(attrs={'class':'form-control-file',
+                        'placeholder':''
             }),
             required=True
     )
@@ -76,4 +73,4 @@ class ApplicationForm(ModelForm):
     )
     class Meta:
         model = Application
-        fields = ['name','email','university','summary','slides','comments']
+        fields = ['name','email','institution','identification','summary','slides','comments']
