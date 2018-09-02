@@ -37,11 +37,15 @@ def application (request):
 def send_submission_email(application):
         message = "Name: " + application.name + "\n" 
         message += "Email Address: " + application.email + "\n" 
-        message += "Submmary: " + application.summary.url
-        message += "Slides: " + application.slides.url
+        message += "University: " + application.university + "\n" 
+        message += "ID: https://ssf.textbook.ventures" + application.identification.url+ "\n"
+        message += "Summary: https://ssf.textbook.ventures" + application.summary.url+ "\n"
+        message += "Slides: https://ssf.textbook.ventures" + application.slides.url+ "\n"
         message += "Additional Comments\n" + application.comments
         recipients = ['Operations@textbook.ventures',
-                       'Kevinwochan@gmail.com'
+                       'Kevinwochan@gmail.com',
+                       'Jenny@textbook.ventures',
+                       'Clinton@textbook.ventures',
         ]
         email = create_message(recipients, 'SSF Application: '+ application.name, message)
         print(message)

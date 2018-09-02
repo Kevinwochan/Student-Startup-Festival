@@ -21,13 +21,12 @@ class Application(models.Model):
 class ApplicationForm(ModelForm):
     name = forms.CharField(
             max_length=100,
-            label='Name',
+            label='Founder Name',
             widget = forms.TextInput(attrs={'class':'form-control',
                         'placeholder':'John Smith'
             }),
             required=True
     )
-
     email = forms.EmailField(
             max_length=100,
             label='Email',
