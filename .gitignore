@@ -58,6 +58,7 @@ docs/_build/
 target/
 
 # Static server files
+home/migrations/
 public/*
 media/*
 *.sqlite3
