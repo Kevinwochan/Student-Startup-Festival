@@ -59,4 +59,5 @@ target/
 
 # Static server files
 public/*
+media/*
 *.sqlite3
