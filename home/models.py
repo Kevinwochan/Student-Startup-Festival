@@ -47,21 +47,21 @@ class ApplicationForm(ModelForm):
     )
     identification = forms.ImageField(
             label='Photo of valid student identification',
-            widget = forms.FileInput(attrs={'class':'form-control-file',
+            widget = forms.ClearableFileInput(attrs={'class':'form-control-file',
                         'placeholder':''
             }),
             required=True
     )
     summary = forms.FileField(
             label='One-Page Summary',
-            widget = forms.FileInput(attrs={'class':'form-control-file',
+            widget = forms.ClearableFileInput(attrs={'class':'form-control-file',
                         'placeholder':'pdf format only'
             }),
             required=True
     )
     slides = forms.FileField(
             label='Pitch Deck',
-            widget = forms.FileInput(attrs={'class':'form-control-file',
+            widget = forms.ClearableFileInput(attrs={'class':'form-control-file',
                         'placeholder':'pdf format only'
             }),
             required=True
