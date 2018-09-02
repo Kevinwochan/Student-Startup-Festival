@@ -253,7 +253,7 @@ td {
 /* Make sure all circles are at the same spot */
   .timeline-left::after, .timeline-right::after {
     left: 18px;
-    top: 30px;
+    top: 45px;
   }
 
 /* Make all right text-boxs behave like the left ones */
@@ -263,12 +263,11 @@ td {
   .timeline-left{
     text-align: left;
   }
+  .timeline-date-left,
   .timeline-date-right{
-
-  }
-  .timeline-date-left {
-    right: 330px;
-    top: -15px;
+    position: static;
+    margin-bottom: -10px;
+    margin-left: 30px;
   }
 }
 /* Small devices (landscape phones, 576px and up)*/

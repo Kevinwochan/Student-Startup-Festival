@@ -3,39 +3,38 @@
 {% block content %}
 {% load static %}
 <section id="cover">
-	<div id="inner-cover" class="mx-auto w-100 text-left dark-blue-bg container" style="background-image: url('{% static 'img/pitchnight-13.jpg' %}');">
-		<div class="row align-items-center">
-			<div class="col-5">
-				<img  style="max-width:80%" src="{% static 'img/ssf.png' %}">
-			</div>
-			<div class="col-7">
-				<h1 class="cover-heading">Student Startup Festival is</h1>
-				<h1>Coming Soon to <font class="secondary-accent">Sydney</font> on <font class="primary-accent">Oct 25th 2018.</font></h1>
-				<p>Get PUMPED for a showcase night of Sydney’s best student startups, keynote speakers and more! Register now to get updates on ticket registration, competitions and event information.</p>
-				<a href="{% url 'homepage' %}#subscribe" class="btn btn-outline-primary button" role="button" "_blank">GET UPDATES</a>
-			</div>
+	<div id="inner-cover" class=" text-center mx-auto w-100 dark-blue-bg container" style="background-image: url('{% static 'img/pitchnight-13.jpg' %}');">
+		<div class="row align-items-center ">
+				<img class=" mx-auto" style="max-width:30%" src="{% static 'img/ssf.png' %}">
 		</div>
-		<div class="cover-footer text-center">
+		<div class="row align-items-center ">
+				<h1 class="my-5 mx-auto">Coming to <font class="secondary-accent">Sydney</font> on <font class="primary-accent">Oct 25th 2018.</font></h1>
+		</div>
+		<div class="row align-items-center ">
+				<a href="{% url 'homepage' %}#subscribe" class=" mx-auto btn btn-outline-primary button" role="button" "_blank">GET UPDATES</a>
+		</div>
+		<div class="row align-items-end my-5">
 			<div class="container-fluid">
 				<p class="text-uppercase font-weight-bold my-0">EVENT PARTNERS</p>
 				<div class="row">
-					<div class="col-4">
+					<div class="col-md-4">
 						<a href="https://http://www.cityofsydney.nsw.gov.au/">
 							<img class="event-partner d-inline" src="{% static 'img/city-of-sydney.png' %}">
 						</a>
 					</div>
-					<div class="col-4">
+					<div class="col-md-4">
 						<a href="https://textbook.ventures">
 							<img class="event-partner d-inline" src="{% static 'img/textbook-ventures.png' %}">
 						</a>
 					</div>
-					<div class="col-4">
+					<div class="col-md-4">
 						<a href="https://www.techsydney.com.au/">
 							<img class="event-partner d-inline" src="{% static 'img/techsydney.png' %}">
 						</a>
 					</div>
 				</div>
 			</div>
+		</div>
 		</div>
 	</div>
 </section>
