@@ -5,6 +5,12 @@ from .models import Application
 from .models import ApplicationForm
 from .gmail import *
 
+def handler403(request, exception, template_name='403.html'):
+        return render(request,'403.html', {'page':'403'})
+
+def handler404(request, exception, template_name='404.html'):
+        return render(request,'404.html', {'page':'404'})
+
 def homepage (request):
         return render(request,'landing.html', {'page':'homepage'})
 
