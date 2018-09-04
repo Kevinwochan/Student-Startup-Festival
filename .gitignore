@@ -62,3 +62,6 @@ home/migrations/
 public/*
 media/*
 db.sqlite3
+
+# vim swap files
+*.swp
