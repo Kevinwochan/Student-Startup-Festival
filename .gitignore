@@ -61,4 +61,4 @@ target/
 home/migrations/
 public/*
 media/*
-*.sqlite3
+db.sqlite3
