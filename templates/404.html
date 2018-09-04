@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<section id="cover">
+	<div id="inner-cover" class=" text-center mx-auto w-100 dark-blue-bg container" style="background-image: url('{% static 'img/pitchnight-13.jpg' %}');">
+		<div class="row align-items-center ">
+			<img class=" mx-auto" style="max-width:30%" src="{% static 'img/ssf.png' %}">
+		</div>
+		<div class="row align-items-center ">
+			<h1 class="mt-5 mx-auto">404</h1>
+		</div>
+		<div class="row align-items-center ">
+			<h1 class="my-5 mx-auto">Try one of the links in the menu above!</h1>
+		</div>
+		<div class="row align-items-end my-5 mx-0">
+			<p class="text-uppercase mx-auto font-weight-bold my-0">EVENT PARTNERS</p>
+			<div class="row">
+				<div class="col-md-4">
+					<a href="https://http://www.cityofsydney.nsw.gov.au/">
+						<img class="event-partner d-inline" src="{% static 'img/city-of-sydney.png' %}">
+					</a>
+				</div>
+				<div class="col-md-4">
+					<a href="https://textbook.ventures">
+						<img class="event-partner d-inline" src="{% static 'img/textbook-ventures.png' %}">
+					</a>
+				</div>
+				<div class="col-md-4">
+					<a href="https://www.techsydney.com.au/">
+						<img class="event-partner d-inline" src="{% static 'img/techsydney.png' %}">
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}
