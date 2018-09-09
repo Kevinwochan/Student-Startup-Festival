@@ -17,8 +17,7 @@
 }
 /* Text styles */
 html { font-size: 20px; }
-p ,
-body
+p , body
 {
   font-family: 'Varela Round', sans-serif;
   font-weight: 400;
@@ -152,6 +151,9 @@ input, select {
 }
 input[type=file]{
   border: 0rem !important;
+}
+#mc_embed_signup{
+ width: 100%;
 }
 .button-primary,
 .button, 

@@ -16,11 +16,11 @@ section {
 #inner-cover {
   background-size:cover;
   min-height:100vh;
-  padding: 6rem 1.5rem 1rem 1.5rem;
+  padding: 7rem 1.5rem 1rem 1.5rem;
   position: relative;
 }
 #cover-image{
-  max-width: 90%;
+  max-width: 80%;
 }
 #cover-text {
   text-shadow: none;
@@ -264,12 +264,9 @@ td {
 @media (min-width: 576px) {  }
 
 /* Medium devices (tablets, 768px and up)*/
-@media (min-width: 768px) {  }
-
-/* Large devices (desktops, 992px and up)*/
-@media (min-width: 992px) { 
+@media (min-width: 768px) { 
   #cover-image{
-    max-height: 30vh;
+    max-height: 20vh;
   }
   #cover-footer{
    position: absolute;
@@ -277,6 +274,14 @@ td {
    left: 0;
    width: 100%;
   }
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { 
+  #cover-image{
+    max-height: 30vh;
+  }
+
   #about-us .right-bordered-col{
     border-right: 10px solid #35a3db;
     border-bottom: 0px;
