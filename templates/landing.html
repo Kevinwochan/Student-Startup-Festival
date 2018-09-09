@@ -11,11 +11,11 @@
 				<h1 class="mx-auto">Coming to <font class="secondary-accent">Sydney</font> on <font class="primary-accent">Oct 25th 2018.</font></h1>
 		</div>
 		<div class="row mb-5 align-items-center ">
-				<a href="{% url 'homepage' %}#subscribe" class=" mx-auto btn btn-outline-primary button" role="button" "_blank">GET UPDATES</a>
+				<a href="{% url 'application' %}" class="mx-auto btn btn-outline-primary button" role="button" "_blank">APPLY NOW</a>
 		</div>
 		<div class="row align-items-end cover-footer mx-0">
 			<div class="container-fluid">
-				<p class="text-uppercase font-weight-bold my-0">EVENT PARTNERS</p>
+				<h4 class="text-uppercase font-weight-bold my-0">EVENT PARTNERS</h4>
 				<div class="row">
 					<div class="col-md-4">
 						<a href="https://http://www.cityofsydney.nsw.gov.au/">
@@ -39,9 +39,20 @@
 	</div>
 </section>
 
+<section id="about-us" class="dark-blue-bg text-left no-space-section">
+		<div class="row mx-0">
+			<div class="col-md m-5 p-5">
+				<h1>NSW’s first student-let festival for student entrepreneurship</h1>
+				<p class="my-0 mb-3">Being a student entrepreneur is hard! That’s why the Student Startup Festival was created, to empower and celebrate the student startup ecosystem’s unsung heroes, the campus hustlers, and the industry hackers!</p>
+			</div>
+			<div class="col-md" style="background-image: url('{% static 'img/pitchnight-pink.jpg' %}');background-size: cover; background-position: center;">
+			</div>
+		</div>
+</section>
+
 <section id="pitch" class="text-center">
 	<div class="container">
-		<i style="color:#35a3db" class="far fa-lightbulb fa-3x mt-2 mb-5"></i>
+		<i style="color:#35a3db" class="far fa-moon fa-3x mt-2 mb-5"></i>
 		<h1>Are You Sydney's</h1>
 		<h1 class="primary-accent">Best Student Startup?</h1>
 		<p>Win the ultimate Sydney Startup experience provided by our gracious partners including 3 months of space at Tank Stream Labs in Sydney's Startup Hub, Academy Xi scholarships and more.</p>
@@ -49,16 +60,54 @@
 	</div>
 </section>
 
-<section id="about-us" class="dark-blue-bg text-left no-space-section">
-		<div class="row mx-0">
-			<div class="col-md m-5 p-5">
-				<h1>We are NSW’s first student-led festival celebrating student entrepreneurship across all tertiary education students in NSW</h1>
-				<p class="my-0 mb-3">Being a student entrepreneur is hard! That’s why the Student Startup Festival was created, to empower and celebrate the student startup ecosystem’s unsung heroes, the campus hustlers, and the industry hackers!</p>
-				<a href="https://textbook.ventures/" class="btn btn-outline-primary button" role="button" "_blank">ABOUT US </a>
-			</div>
-			<div class="col-md" style="background-image: url('{% static 'img/pitchnight-pink.jpg' %}');background-size: cover; background-position: center;">
+<section id="timeline" class="text-centre">
+	<h1>Timeline</h1>
+	<div class="timeline my-5 mx-auto">
+		<div class="text-box timeline-left">
+			<p class="timeline-date-left">31ST AUG</p>
+			<div class="timeline-text">
+				<h5>Applications Open</h5>
+				<p>It's time to send in your submission - do it sooner before you forget.</p>
 			</div>
 		</div>
+		<div class="text-box timeline-right">
+			<p class="timeline-date-right">25TH SEP</p>
+			<div class="timeline-text">
+				<h5>Applications Close</h5>
+				<p>Online applications close 11:59PM on the 18th of September</p>
+			</div>
+		</div>
+		<div class="text-box timeline-left">
+			<p class="timeline-date-left">1ST SEP</p>
+			<div class="timeline-text">
+				<h5>Semi-Finalists Notified</h5>
+				<p>Keep your eyes peeled and check your inbox!</p>
+			</div>
+		</div>
+		<div class="text-box timeline-right">
+			<p class="timeline-date-right">10TH OCT</p>
+			<div class="timeline-text">
+				<h5>Semi-final Night</h5>
+				<p>Held at a venue in the CBD, 16 of the best startups.</p>
+			</div>
+		</div>
+		<div class="text-box timeline-left">
+			<p class="timeline-date-left">19TH OCT</p>
+			<div class="timeline-text">
+				<h5>Pitch Workshop</h5>
+				<p>The 8 finalists attend a small pitch workshop run by a prominent VC.</p>
+			</div>
+		</div>
+		<div class="text-box timeline-right">
+			<p class="timeline-date-right">25TH OCT</p>
+			<div class="timeline-text">
+				<h5>Festival Night</h5>
+				<p>8 student startups pitch onstage in front of an audience of 150 and an all-star panel.</p>
+			</div>
+		</div>
+	</div>
+	<a href="{% url 'application' %}" class="btn btn-outline-primary button" role="button" "_blank">APPLY NOW</a>
 </section>
+
 
 {% endblock %}
