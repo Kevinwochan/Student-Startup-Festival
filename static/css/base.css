@@ -25,12 +25,12 @@ body
 }
 h1, h2, h3 {
   font-size: 2.4rem;
-  font-family: "Baloo Tammudu", cursive;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
 }
 h4,h5,h6 {
-  font-size: 1.3rem;
-  font-family: "Roboto", sans-serif;
+  font-size: 1.4rem;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
 }
 ::-moz-selection { /* Code for Firefox */

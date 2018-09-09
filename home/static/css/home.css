@@ -16,11 +16,11 @@ section {
 #inner-cover {
   background-size:cover;
   min-height:100vh;
-  padding: 10rem 1.5rem 1rem 1.5rem;
+  padding: 6rem 1.5rem 1rem 1.5rem;
   position: relative;
 }
 #cover-image{
-  max-width: 100%;
+  max-width: 90%;
 }
 #cover-text {
   text-shadow: none;
@@ -270,7 +270,7 @@ td {
 /* Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) { 
   #cover-image{
-	  max-width:100%;
+	  max-height: 30vh;
   }
   #about-us .right-bordered-col{
     border-right: 10px solid #35a3db;
