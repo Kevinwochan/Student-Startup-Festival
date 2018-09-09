@@ -38,7 +38,6 @@ section {
 .cover-footer{
   padding: 1rem 0rem;
   color: white;
-  bottom:0;
 }
 .event-partner{
   max-height: 70px;
@@ -270,7 +269,13 @@ td {
 /* Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) { 
   #cover-image{
-	  max-height: 30vh;
+    max-height: 30vh;
+  }
+  #cover-footer{
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
   }
   #about-us .right-bordered-col{
     border-right: 10px solid #35a3db;
