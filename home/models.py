@@ -12,11 +12,11 @@ class Application(models.Model):
 
     identification = models.FileField(default='', upload_to='applications/')
 
-    summary = models.FileField(default='', upload_to='applications/')
+    summary  = models.TextField(max_length=500, default='')
 
     slides = models.FileField(default='', upload_to='applications/')
 
-    comments = models.CharField(max_length=500, default='')
+    comments = models.TextField(max_length=500, default='')
 
 class ApplicationForm(ModelForm):
     name = forms.CharField(
@@ -35,7 +35,7 @@ class ApplicationForm(ModelForm):
             }),
             required=True
 
-    ) 
+    )
     institution = forms.CharField(
             max_length=100,
             label='Tertiary Institution Name',
@@ -51,11 +51,9 @@ class ApplicationForm(ModelForm):
             }),
             required=True
     )
-    summary = forms.FileField(
-            label='One-Page Summary',
-            widget = forms.ClearableFileInput(attrs={'class':'form-control-file',
-                        'placeholder':'pdf format only'
-            }),
+    summary = forms.CharField(
+            label='Summarise your company',
+            widget = forms.Textarea(attrs={'class':'form-control'}),
             required=True
     )
     slides = forms.FileField(
@@ -63,8 +61,8 @@ class ApplicationForm(ModelForm):
             widget = forms.ClearableFileInput(attrs={'class':'form-control-file',
                         'placeholder':'pdf format only'
             }),
-            required=True
-    )    
+            required=False
+    )
     comments = forms.CharField(
             label='Additional comments',
             widget = forms.Textarea(attrs={'class':'form-control'}),

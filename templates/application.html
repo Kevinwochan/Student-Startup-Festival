@@ -78,7 +78,7 @@
 						{{ application.identification.label_tag }}
 						{{ application.identification.errors }}
 						{{ application.identification }}
-						<small id="idHelp" class="form-text text-muted">Maximum upload size 5mb</small>
+						<small id="idHelp" class="form-text text-muted">Max upload size 5mb</small>
 
 						{{ application.institution.label_tag }}
 						{{ application.institution.errors }}
@@ -87,13 +87,14 @@
 						{{ application.summary.label_tag }}
 						{{ application.summary.errors }}
 						{{ application.summary }}
-						<small id="summaryHelp" class="form-text text-muted">Maximum upload size 5mb</small>
-						{{ application.slides.errors }}
+
 						{{ application.slides.label_tag }}
+						{{ application.slides.errors }}
 						{{ application.slides }}
-						<small id="slidesHelp" class="form-text text-muted">Maximum upload size 10mb</small>
-						{{ application.comments.errors }}
+						<small id="slidesHelp" class="form-text text-muted">Max upload size 10mb</small>
+						<small id="slidesHelp" class="form-text text-muted">You may share a link to the file in the Additional Comments</small>
 						{{ application.comments.label_tag }}
+						{{ application.comments.errors }}
 						{{ application.comments }}
 						<button type="submit" class="button btn-primary my-2">Submit</button>
 					</form>
