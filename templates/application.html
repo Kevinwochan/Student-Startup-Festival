@@ -55,8 +55,16 @@
 <section id="aplication-form" class="text-left">
 	<div class="container text-center">
 		<h1 class="my-5">Submit Your Application</h1>
-			<div class="row mx-0">
-				<div class="col-md-6 text-left">
+			<div class="row mx-0 text-left">
+				<div class="col-md order-md-2 mb-5">
+							<strong>Presentation Slide Deck</strong>
+							<p>What to include in Slide Deck(This is only provided as a guide)</p>
+							<li>Title page/Background</li>
+							<li>How business addresses problem/business model</li>
+							<li>Market Size/Product</li>
+							<li>Future Outlook/ Expansion </li>
+				</div>
+				<div class="col-md-6 order-md-1">
 					<form id="startupcup-application" enctype="multipart/form-data" action="{% url 'application' %}" method="post">
 						{% csrf_token %}
 						{{ application.name.label_tag }}
@@ -70,7 +78,7 @@
 						{{ application.identification.label_tag }}
 						{{ application.identification.errors }}
 						{{ application.identification }}
-						<small id="idHelp" class="form-text text-muted">Maximum upload size 5mb</small>
+						<small id="idHelp" class="form-text text-muted">Max upload size 5mb</small>
 
 						{{ application.institution.label_tag }}
 						{{ application.institution.errors }}
@@ -79,25 +87,19 @@
 						{{ application.summary.label_tag }}
 						{{ application.summary.errors }}
 						{{ application.summary }}
-						<small id="summaryHelp" class="form-text text-muted">Maximum upload size 5mb</small>
-						{{ application.slides.errors }}
+
 						{{ application.slides.label_tag }}
+						{{ application.slides.errors }}
 						{{ application.slides }}
-						<small id="slidesHelp" class="form-text text-muted">Maximum upload size 10mb</small>
-						{{ application.comments.errors }}
+						<small id="slidesHelp" class="form-text text-muted">Max upload size 10mb</small>
+						<small id="slidesHelp" class="form-text text-muted">You may share a link to the file in the Additional Comments</small>
 						{{ application.comments.label_tag }}
+						{{ application.comments.errors }}
 						{{ application.comments }}
 						<button type="submit" class="button btn-primary my-2">Submit</button>
 					</form>
 				</div>
-				<div class="col-md text-left">
-							<strong>Presentation Slide Deck</strong>
-							<p>What to include in Slide Deck(This is only provided as a guide)</p>
-							<li>Title page/Background</li>
-							<li>How business addresses problem/business model</li>
-							<li>Market Size/Product</li>
-							<li>Future Outlook/ Expansion </li>
-				</div>
+
 			</div>
 	</div>
 </section>
