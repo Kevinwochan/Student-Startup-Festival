@@ -21,7 +21,7 @@ urlpatterns = [
     path('',homepage,name="homepage"),
     path('startup-cup/',startupcup, name="startupcup"),
     path('application/',application, name="application"),
-    path('soponsors/',sponsors, name="sponsors"),
+    path('sponsors/',sponsors, name="sponsors"),
     path('subscribed/',subscribed, name="subscribed"),
     path('admin/', admin.site.urls),
 ]
