@@ -17,7 +17,6 @@ def homepage (request):
 def subscribed (request):
         return render(request,'subscribed.html', {'page':'subscribed'})
 
-
 def startupcup (request):
     return render(request, 'startupcup.html', {'page':'startupcup'})
 
@@ -45,7 +44,7 @@ def send_submission_email(application):
         message += "Email Address: " + application.email + "\n" 
         message += "University: " + application.university + "\n" 
         message += "ID: https://ssf.textbook.ventures" + application.identification.url+ "\n"
-        message += "Summary: https://ssf.textbook.ventures" + application.summary.url+ "\n"
+        message += "Summary:\n" + application.summary+ "\n"
         message += "Slides: https://ssf.textbook.ventures" + application.slides.url+ "\n"
         message += "Additional Comments\n" + application.comments
         recipients = ['Operations@textbook.ventures',
