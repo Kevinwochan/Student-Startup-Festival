@@ -42,10 +42,13 @@ def application (request):
 def send_submission_email(application):
         message = "Name: " + application.name + "\n" 
         message += "Email Address: " + application.email + "\n" 
-        message += "University: " + application.university + "\n" 
+        message += "University: " + application.institution + "\n" 
         message += "ID: https://ssf.textbook.ventures" + application.identification.url+ "\n"
         message += "Summary:\n" + application.summary+ "\n"
-        message += "Slides: https://ssf.textbook.ventures" + application.slides.url+ "\n"
+        try:
+            message += "Slides: https://ssf.textbook.ventures" + application.slides.url+ "\n"
+        except:
+            message += "Slides: no slides uploaded in submission\n"
         message += "Additional Comments\n" + application.comments
         recipients = ['Operations@textbook.ventures',
                        'Kevinwochan@gmail.com',
