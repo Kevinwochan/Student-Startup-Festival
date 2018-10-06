@@ -3,14 +3,14 @@
 {% block content %}
 {% load static %}
 <section id="cover">
-	<div id="inner-cover" class=" text-center mx-auto w-100 dark-blue-bg container" style="background-image: url('{% static 'img/pitchnight-13.jpg' %}');">
+	<div id="inner-cover" class=" text-center mx-auto w-100 dark-blue-bg container" style="background-image: url('{% static 'img/landing-hero.jpg' %}'); background-position: center;">
 		<div class="row align-items-start ">
 				<img class="mx-auto" id="cover-image" src="{% static 'img/ssf.png' %}">
 		</div>
 		<div class="row mt-5 align-items-center ">
 				<h1 class="mx-auto">Coming to <font class="secondary-accent">Sydney</font> on <font class="primary-accent">Oct 25th 2018.</font></h1>
 		</div>
-		<div class="row mb-5 align-items-center ">
+		<div class="row mb-5 mt-3 align-items-center ">
 				<a href="{% url 'application' %}" class="mx-auto btn btn-outline-primary button" role="button" "_blank">APPLY NOW</a>
 		</div>
 		<div id="cover-footer" class="row align-items-end mx-0">
@@ -41,8 +41,8 @@
 
 <section id="about-us" class="text-left no-space-section">
 		<div class="row mx-0">
-			<div class="col-md m-5 p-5">
-				<h1>NSW’s first student-let festival for student entrepreneurship</h1>
+			<div class="col-md m-5 p-md-5">
+				<h1 style="word-break:break-word;">NSW’s first student-led festival for student entrepreneurship</h1>
 				<p class="my-0 mb-3">Being a student entrepreneur is hard! That’s why the Student Startup Festival was created, to empower and celebrate the student startup ecosystem’s unsung heroes, the campus hustlers, and the industry hackers!</p>
 			</div>
 			<div class="col-md" style="background-image: url('{% static 'img/founders.jpg' %}');background-size: cover; background-position: center;">
@@ -55,93 +55,9 @@
 		<i style="color:#35a3db" class="far fa-moon fa-3x mt-2 mb-5"></i>
 		<h1>Are You Sydney's</h1>
 		<h1 class="primary-accent">Best Student Startup?</h1>
-		<p>Win the ultimate Sydney Startup experience provided by our gracious partners including 3 months of space at Tank Stream Labs in Sydney's Startup Hub, Academy Xi scholarships and more.</p>
+		<p>Win the ultimate Sydney Startup experience provided by our gracious partners</p>
 		<a href="{% url 'startupcup' %}" class="btn btn-outline-primary button" role="button" "_blank">MORE INFO</a>
 	</div>
 </section>
-
-<section id="schedule" class="">
-	<div class="container">
-		<table class="table text-left">
-			<tr>
-				<th colspan=2>Friday</th>
-			</tr>
-				<td><b>6PM</b></td>
-				<td>
-					<b>Meet the Startups:</b> Intro to the three fintech startups and their vision, then a Q&amp;A session<br>
-					Students who sign up individually will also have the opportunity to form groups.<br>
-					There’ll also be a mix and meet with pizza and beers.<br>
-				</td>
-			</tr>
-				<td><b>7PM</b></td>
-				<td>Challenges released</td>
-			<tr>
-				<td><b>8PM</b></td>
-				<td><b>Hackathon Starts</b></td>
-			</tr>
-			<tr>
-				<th colspan=2>Saturday</th>
-			</tr>
-			<tr>
-				<td><b>10AM</b></td>
-				<td>Stone &amp; Chalk Workspace Opens</td>
-			</tr>
-			<tr>
-				<td><b>12PM</b></td>
-				<td>
-					<b>Validation and Market Research Workshop:</b> The workshop will be run by one of the three startups and will give the students a rundown on how to validate an idea and conduct market research on product feasibility.
-				</td>
-			</tr>
-			<tr>
-				<td><b>1PM</b></td>
-				<td>
-					<b>Lunch</b> + <b>Mentoring:</b> Students will have the opportunity to review their ideas with the startup managing their problem scenario.
-				</td>				
-			</tr>
-			<tr>
-				<td><b>6PM</b></td>
-				<td>Stone &amp; Chalk Closes</td>				
-			</tr>
-			<tr>
-				<th colspan=2>Sunday</th>
-			</tr>
-			<tr>
-				<td><b>10AM</b></td>
-				<td>Stone &amp; Chalk Opens</td>				
-			</tr>
-			<tr>
-				<td><b>12PM</b></td>
-				<td>
-					<b>Pitching Workshop:</b> The workshop will run teams through the information that startups often put in pitches. The coach will also talk about popular speaking techniques that successful pitchers use.
-				</td>
-			</tr>
-			<tr>
-				<td><b>12PM</b></td>
-				<td>
-					<b>Lunch</b> + <b>Mentoring:</b> Students will have the opportunity to review their ideas with the startup managing their problem scenario.
-				</td>
-			</tr>
-			<tr>
-				<td><b>1:30PM</b></td>
-				<td>
-					<b>Final Pitches:</b> All teams will pitch in front of the fintech startups and Reinventure partners.
-				</td>				
-			</tr>
-			<tr>
-				<td><b>4:30PM</b></td>
-				<td>
-					Networking
-				</td>				
-			</tr>
-			<tr>
-				<td><b>5PM</b></td>
-				<td>
-					<b>Close</b>
-				</td>				
-			</tr>
-		</table>
-	</div>
-</section>
-
 
 {% endblock %}

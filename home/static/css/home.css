@@ -59,20 +59,27 @@ section {
 #sponsor-wall{
 
 }
+.dark-tile{
+ background-color: #00001e;
+ border: solid white 1px;
+}
 .sponsor-tile{
  position: relative;
  width:200px;
  height:200px;
- background-color: #00001e;
- border: solid white 1px;
+}
+.sponsor-tile:hover .sponsor-image{
+  transform: translate(-50%, -50%) scale(1.2);
 }
 .sponsor-image{
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  max-height: 150px;
-  max-width: 200px;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform .2s;
+  max-width: 80%;
+}
+.tier-1{
 }
 .sponsor-logo-container{
   min-height: 150px;

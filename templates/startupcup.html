@@ -3,16 +3,16 @@
 {% block content %}
 {% load static %}
 
-<section id="about" class="dark-blue-bg text-left">
-	<div class="m-5 p-5">
+<section id="about" class="dark-blue-bg text-left" style="background-image: url('{% static 'img/startupcup-hero.jpg' %}'); background-position: center;">
+	<div class="m-5 p-md-5">
 		<div>
-				<h1 class="d-inline">STUDENT</h1>
-				<img class="d-inline mx-3" style="max-height:80px" src="{% static 'img/crown.png' %}">
-				<h1 class="secondary-accent" >STARTUP CUP</h1>
+			<h1 class="d-inline" style="vertical-align:bottom;">STUDENT</h1>
+			<img class="d-inline mx-4" style="max-height:60px; vertical-align: text-top;" src="{% static 'img/crown.png' %}">
+			<h1 class="secondary-accent" >STARTUP CUP</h1>
 		</div>
-<p class="my-0">We partnered up with the ecosystem's largest players to provide the</p>
-		<p class="my-0"><font class="font-weight-bold">ULTIMATE STARTUP EXPERIENCE</font> to the best student-founded startup. Will it be you?</p>
-	<a href="{% url 'application' %}" class="btn btn-outline-primary button" role="button" "_blank">APPLY NOW</a>
+		<p class="my-0">We partnered up with the ecosystem's largest players to provide the <font class="font-weight-bold">ULTIMATE STARTUP EXPERIENCE</font> to the best student-founded startups.</p>
+		<p> Will it be you?</p>
+		<a href="{% url 'application' %}" class="my-3 btn btn-outline-primary button" role="button" "_blank">APPLY NOW</a>
 	</div>
 </section>
 
@@ -26,28 +26,35 @@
 			</div>
 		</div>
 </section>
+
 <section id="win" class="dark-blue-bg">
 	<div class="container">
 		<h1 class="primary-accent">Win the</h1>
-		<h1 class="secondary-accent">Ultimate Startup Experience</h1>
+		<h1 class="">Ultimate Startup Experience</h1>
 		<div class="row mt-5">
-			<div class="col-md">
-				<a href="https://www.tankstreamlabs.com/">
-					<img class="prize-logo" src="{% static 'img/tank-stream-labs.png' %}">
-				</a>
-				<p class="font-weight-bold">3 Months WorkSpace</p>
-				<p>3 free months access to one of Sydney’s best co-working spaces located in the Sydney Startup Hub, the heart of the ecosystem.</p>
+			<div class="col mx-auto">
+				<i class="prize-icon fas fa-trophy fa-5x" style="color:gold;"></i>
+				<p class="font-weight-bold">Grand Prize</p>
+				<p><strong class="secondary-accent">Spotify: </strong>6 months premium</li>
+				<p><strong class="secondary-accent">Amazon Web Services: </strong>$5000 credits</li>
+				<p><strong class="secondary-accent">Tank Stream Labs: </strong>3 months free space</li>
+				<p><strong class="secondary-accent">Academy Xi: </strong>4 tickets to one day Product Management Bootcamp</li>
 			</div>
-			<div class="col-md">
-				<a href="https://academyxi.com/">
-					<img class="prize-logo" src="{% static 'img/academy-xi.png' %}">
-				</a>
-				<p class="font-weight-bold">Bootcamp Tickets</p>
-				<p>Academy Xi’s acclaimed one-day “Product Management Bootcamp” is FREE for 4 members of the winning student startup.</p>
+		</div>
+		<div class="row mt-5">
+			<div class="col-6 mx-auto">
+				<i class="prize-icon fas fa-trophy fa-5x" style="color:silver;"></i>
+				<p class="font-weight-bold">Second Prize</p>
+				<p><strong class="secondary-accent">AWS: </strong>$500 AWS credits</p>
+				<p><strong class="secondary-accent">Spotify: </strong>3 months free</p>
+				<p><strong class="secondary-accent">Tank Stream Labs: </strong>Mentoring</p>
 			</div>
-			<div class="col-md">
-				<i class="prize-icon primary-accent fas fa-question fa-4x"></i>
-				<p class="font-weight-bold">More Coming Soon...</p>
+			 <div class="col-6 mx-auto">
+				<i class="prize-icon fas fa-award fa-5x"></i>
+				<p class="font-weight-bold">People's Choice Award</p>
+				<p><strong class="secondary-accent">Spotify: </strong>3 months free</p>
+				<p><strong class="secondary-accent">Ola Cabs: </strong>$300 in ride credits</p>
+				<p><strong class="secondary-accent">MealPal: </strong>1 month of free meals</p>
 			</div>
 		</div>
 	</div>
@@ -60,8 +67,8 @@
 				<h1>Eligibility Criteria</h1>
 			</div>
 			<div class="col-md-7 text-left">
-					<p><font class="font-weight-bold">At least one of the founders</font> have to be currently enrolled as a tertiary education student (University or TAFE) at the time of the Finals Pitch Night on October 25th 2018</p>
-					<p><font class="font-weight-bold">Must be based in Sydney or NSW </font>(regional applicants must be willing to travel to semi-finals and grand finals)</p>
+					<p><font class="font-weight-bold">At least one of the founders</font> have to be currently enrolled as a tertiary education student (University or TAFE) at the time of the Finals Pitch Night on October 25th 2018.</p>
+					<p><font class="font-weight-bold">Must be based in Sydney or NSW </font>(regional applicants must be willing to travel to semi-finals and grand finals).</p>
 				</div>
 			</div>
 		</div>
@@ -108,7 +115,7 @@
 			</div>
 		</div>
 		<div class="text-box timeline-right">
-			<p class="timeline-date-right">31ST AUG</p>
+			<p class="timeline-date-right">1ST OCT</p>
 			<div class="timeline-text">
 				<h5>Applications Close</h5>
 				<p>Online applications close 11:59PM on the 18th of September</p>
@@ -145,7 +152,6 @@
 	</div>
 	<a href="{% url 'application' %}" class="btn btn-outline-primary button" role="button" "_blank">APPLY NOW</a>
 </section>
-
 
 <section id="faq" class="">
 	<div class="container">

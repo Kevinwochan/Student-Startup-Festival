@@ -10,7 +10,7 @@
 				<a class="nav-link{% if page == "homepage" %} active{% endif %}" href="{% url 'homepage' %}">THE FESTIVAL</a>
 				<a class="nav-link{% if page == "startupcup" %} active{% endif %}" href="{% url 'startupcup' %}">STARTUP CUP</a>
 				<a class="nav-link" href="#contact">CONTACT</a>
-				<a href="{% url 'application' %}" class="btn btn-outline-primary button" role="button" "_blank">APPLY NOW</a>
+				<a class="nav-link{% if page == "sponsors" %} active{% endif %}" href="{% url 'sponsors' %}">SPONSORS</a>
 			</div>
 	 </nav>
 </div>
